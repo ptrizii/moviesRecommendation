@@ -9,4 +9,14 @@ data = pd.read_csv('data.csv')
 st.title('Movies Recommendation System')
 
 # Add search bar for movies
-search = search_term = st.text_input('Enter a name to search:')
+search_term = st.text_input('Enter your favorite film title:')
+
+# Display the result
+# Button for executing the search
+if st.button('Search'):
+    # Filter data based on the search term
+    result = data[data['title_query'].str.contains(search_term, case=False)]
+
+    # Display search results
+    st.write('Search Results:')
+    st.table(result)
