@@ -22,8 +22,13 @@ if st.button('Search'):
 #     st.write('Search Results:')
 #     st.table(result[column_name])
 
-st.write('Search Results:')
-for index, row in result.iterrows():
-    button_label = row['Title']
-    if st.button(button_label):
-        st.write(f"You clicked the button for {button_label}")
+if not result.empty:
+    # Display search results as buttons
+    st.write('Search Results:')
+    for index, row in result.iterrows():
+        button_label = row['Title']
+        if st.button(button_label):
+            st.write(f"You clicked the button for {button_label}")
+            # You can add more actions or details for the selected movie
+else:
+    st.write('No results found.')
