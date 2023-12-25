@@ -4,6 +4,7 @@ import numpy as np
 
 # Read data
 data = pd.read_csv('data.csv')
+column_name = ['Title', 'genres', 'year', 'overview']
 
 # Add title
 st.title('Movies Recommendation System')
@@ -17,6 +18,12 @@ if st.button('Search'):
     # Filter data based on the search term
     result = data[data['title_query'].str.contains(search_term, case=False)]
 
-    # Display search results
-    st.write('Search Results:')
-    st.table(result)
+#     # Display search results
+#     st.write('Search Results:')
+#     st.table(result[column_name])
+
+st.write('Search Results:')
+for index, row in result.iterrows():
+    button_label = row['Title']
+    if st.button(button_label):
+        st.write(f"You clicked the button for {button_label}")
