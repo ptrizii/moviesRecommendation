@@ -16,7 +16,7 @@ search_term = st.text_input('Enter your favorite film title:')
 # Button for executing the search
 if st.button('Search'):
     # Filter data based on the search term
-    result = data[data['Title'].str.contains(search_term, case=False)]
+    result = data[data['title_query'].str.contains(search_term, case=False)]
 
 # Display search results as buttons
 if not result.empty:
