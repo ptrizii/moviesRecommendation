@@ -22,9 +22,9 @@ if st.button('Search'):
 if not result.empty:
     st.write('Search Results:')
     for index, row in result.iterrows():
-        button_label = f"{row['Title']} - {row['genres']}"
+        button_label = f"{row['title']} - {row['genres']}"
         if st.button(button_label):
-            st.write(f"You clicked the button for {row['Title']}")
+            st.write(f"You clicked the button for {row['title']}")
             # You can add more actions or details for the selected movie
 else:
     st.write('No results found.')
