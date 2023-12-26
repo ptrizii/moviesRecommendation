@@ -16,7 +16,7 @@ search_term = st.text_input('Enter your favorite film title:')
 # Button for executing the search
 if st.button('Search'):
     # Check if 'Title' is in the columns
-    if 'Title' in data.columns:
+    if 'title' in data.columns:
         # Filter data based on the search term
         result = data[data['title_query'].str.contains(search_term, case=False)]
     else:
