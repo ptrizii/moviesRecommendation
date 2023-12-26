@@ -12,6 +12,7 @@ result = pd.DataFrame()  # Initialize result as an empty DataFrame
 def handle_click():
     st.write("Button clicked!")
 
+
 def print_something(index):
     st.write(f"Function called for film with Index: {index}")
 
@@ -32,17 +33,24 @@ if st.button('Search'):
     else:
         st.write('Error: The column "title" does not exist in the DataFrame.')
 
-# Display search results as buttons
-if not result.empty:
-    st.write('Search Results:')
-    for index, row in result.iterrows():
-        # Display the title
-        st.write(f"# {row['title']}")
+    # Display search results as buttons
+    if not result.empty:
+        st.write('Search Results:')
+        for index, row in result.iterrows():
+            # Display the title
+            st.write(f"# {row['title']}")
 
-        # Display the genres below the title
-        st.write(f"Genres: {row['genres']}")
-        st.write(f"Released year: {row['year']}")
+            # Display the genres below the title
+            st.write(f"Genres: {row['genres']}")
+            st.write(f"Released year: {row['year']}")
 
-        # Add a button with a unique label
-        if st.button(f"Find recommendation for {row['title']} (Index: {index})", on_click=handle_click):
-            st.write("Button was clicked")
+            # Add a button with a unique label
+            if st.button(f"Find recommendation for {row['title']} (Index: {index})", on_click=handle_click):
+                pass  # Do nothing here, as the button click handling is done globally outside the loop
+
+# Check if the button was clicked
+if st.session_state.button_clicked:
+    st.write("Button was clicked")
+
+# Reset the session state to avoid repeated messages
+st.session_state.button_clicked = False
