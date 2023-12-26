@@ -6,11 +6,11 @@ data = pd.read_csv('data.csv')
 columns_to_display = ['title', 'genres']
 result = pd.DataFrame()  # Initialize result as an empty DataFrame
 
-# Define a function to print something based on the film index
+# Define functions for button clicks
 
 
-def handle_click():
-    st.write("Button clicked!")
+def handle_click(index):
+    print_something(index)  # Call the function with the index
 
 
 def print_something(index):
@@ -21,7 +21,8 @@ def print_something(index):
 st.title('Movies Recommendation System')
 
 # Add search bar for movies
-search_term = st.text_input('Enter your favorite film title:', placeholder="The Conjuring")
+search_term = st.text_input(
+    'Enter your favorite film title:', placeholder="The Conjuring")
 
 # Display the result
 # Button for executing the search
@@ -37,14 +38,11 @@ if st.button('Search'):
     if not result.empty:
         st.write('Search Results:')
         for index, row in result.iterrows():
-            # Display the title
+            # Display the title, genres, and year
             st.write(f"# {row['title']}")
-
-            # Display the genres below the title
             st.write(f"Genres: {row['genres']}")
             st.write(f"Released year: {row['year']}")
 
-            # Add a button with a unique label
-            st.button(f"Find recommendation for {row['title']} (Index: {index})", on_click=handle_click)
-            
-
+            # Add a button with a unique label and pass the index to the function
+            st.button(
+                f"Find recommendation for {row['title']} (Index: {index})", on_click=lambda: handle_click(index))
