@@ -21,7 +21,7 @@ def print_something(index):
 st.title('Movies Recommendation System')
 
 # Add search bar for movies
-search_term = st.text_input('Enter your favorite film title:')
+search_term = st.text_input('Enter your favorite film title:', placeholder="The Conjuring")
 
 # Display the result
 # Button for executing the search
@@ -46,11 +46,7 @@ if st.button('Search'):
 
             # Add a button with a unique label
             if st.button(f"Find recommendation for {row['title']} (Index: {index})", on_click=handle_click):
-                pass  # Do nothing here, as the button click handling is done globally outside the loop
+                st.write("Hello")
+            else:
+                st.write("Do you know me?")
 
-# Check if the button was clicked
-if st.session_state.button_clicked:
-    st.write("Button was clicked")
-
-# Reset the session state to avoid repeated messages
-st.session_state.button_clicked = False
