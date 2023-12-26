@@ -15,16 +15,26 @@ search_term = st.text_input('Enter your favorite film title:')
 # Display the result
 # Button for executing the search
 if st.button('Search'):
-    # Filter data based on the search term
-    result = data[data['title_query'].str.contains(search_term, case=False)]
+    # Check if 'Title' is in the columns
+    if 'Title' in data.columns:
+        # Filter data based on the search term
+        result = data[data['Title'].str.contains(search_term, case=False)]
+    else:
+        st.write('Error: The column "Title" does not exist in the DataFrame.')
 
 # Display search results as buttons
 if not result.empty:
     st.write('Search Results:')
     for index, row in result.iterrows():
-        button_label = f"{row['title']} - {row['genres']}"
-        if st.button(button_label):
-            st.write(f"You clicked the button for {row['title']}")
+        # Display the title
+        st.write(f"# {row['Title']}")
+
+        # Display the genres below the title
+        st.write(f"Genres: {row['genres']}")
+
+        # Add a button
+        if st.button(f"You clicked the button for {row['Title']}"):
             # You can add more actions or details for the selected movie
+            st.write(f"Additional details for {row['Title']}")
 else:
     st.write('No results found.')
