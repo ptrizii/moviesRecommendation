@@ -48,5 +48,9 @@ if not result.empty:
         st.write(f"Released year: {row['year']}")
 
         # Add a button with a unique label and pass the index to the function
-        st.button(
-            f"Find recommendation for {row['title']} (Index: {index})", on_click=lambda: handle_click(index))
+        # st.button(
+        #     f"Find recommendation for {row['title']} (Index: {index})", on_click=lambda: handle_click(index))
+        if st.button(f"Fin Recommendation for {row['title']} (index: {index})"):
+            st.write("this is your recommendation")
+        else:
+            st.write("Not found")
