@@ -1,10 +1,10 @@
 import streamlit as st
-import pandas as pd 
-import numpy as np 
+import pandas as pd
 
 # Read data
 data = pd.read_csv('data.csv')
-column_name = ['Title', 'genres', 'year', 'overview']
+columns_to_display = ['Title', 'genres']
+result = pd.DataFrame()  # Initialize result as an empty DataFrame
 
 # Add title
 st.title('Movies Recommendation System')
@@ -14,23 +14,12 @@ search_term = st.text_input('Enter your favorite film title:')
 
 # Display the result
 # Button for executing the search
-# if st.button('Search'):
-#     # Filter data based on the search term
-#     result = data[data['title_query'].str.contains(search_term, case=False)]
-
-#     # Display search results
-#     st.write('Search Results:')
-#     st.table(result[column_name])
-
-
-# Display the result
-# Button for executing the search
 if st.button('Search'):
     # Filter data based on the search term
     result = data[data['Title'].str.contains(search_term, case=False)]
 
 # Display search results as buttons
-if result is not None and not result.empty:
+if not result.empty:
     st.write('Search Results:')
     for index, row in result.iterrows():
         button_label = f"{row['Title']} - {row['genres']}"
