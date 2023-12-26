@@ -45,7 +45,7 @@ if st.button('Search'):
             st.write(f"Released year: {row['year']}")
 
             # Add a button with a unique label
-            if st.button(f"Find recommendation for {row['title']} (Index: {index})", on_click=handle_click):
+            if st.button(f"Find recommendation for {row['title']} (Index: {index})"):
                 st.write("Hello")
             else:
                 st.write("Do you know me?")
