@@ -8,12 +8,6 @@ result = pd.DataFrame()  # Initialize result as an empty DataFrame
 
 # Define functions for button clicks
 
-# Add title
-st.title('Movies Recommendation System')
-
-# Add search bar for movies
-search_term = st.text_input(
-    'Enter your favorite film title:', placeholder="The Conjuring")
 
 def handle_click(index):
     print_something(index)  # Call the function with the index
@@ -23,7 +17,12 @@ def print_something(index):
     st.write(f"Function called for film with Index: {index}")
 
 
+# Add title
+st.title('Movies Recommendation System')
 
+# Add search bar for movies
+search_term = st.text_input(
+    'Enter your favorite film title:', placeholder="The Conjuring")
 
 # Button for executing the search
 if st.button('Search'):
@@ -33,6 +32,11 @@ if st.button('Search'):
         result = data[data['title'].str.contains(search_term, case=False)]
     else:
         st.write('Error: The column "title" does not exist in the DataFrame.')
+
+if st.button('Click me'):
+    st.write("HI")
+else:
+    st.write("Do You know me?")
 
     # Display search results as buttons
 if not result.empty:
