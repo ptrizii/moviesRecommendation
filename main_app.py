@@ -33,8 +33,8 @@ if not result.empty:
         st.write(f"Genres: {row['genres']}")
 
         # Add a button
-        if st.button(f"You clicked the button for {row['title']}"):
+        if st.button(f"Find Recommendation"):
             # You can add more actions or details for the selected movie
-            st.write(f"Additional details for {row['title']}")
+            st.write(f"Find Recommendation")
 else:
     st.write('No results found.')
