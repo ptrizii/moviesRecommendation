@@ -8,6 +8,12 @@ result = pd.DataFrame()  # Initialize result as an empty DataFrame
 
 # Define functions for button clicks
 
+# Add title
+st.title('Movies Recommendation System')
+
+# Add search bar for movies
+search_term = st.text_input(
+    'Enter your favorite film title:', placeholder="The Conjuring")
 
 def handle_click(index):
     print_something(index)  # Call the function with the index
@@ -17,14 +23,8 @@ def print_something(index):
     st.write(f"Function called for film with Index: {index}")
 
 
-# Add title
-st.title('Movies Recommendation System')
 
-# Add search bar for movies
-search_term = st.text_input(
-    'Enter your favorite film title:', placeholder="The Conjuring")
 
-# Display the result
 # Button for executing the search
 if st.button('Search'):
     # Check if 'title' is in the columns
@@ -35,14 +35,14 @@ if st.button('Search'):
         st.write('Error: The column "title" does not exist in the DataFrame.')
 
     # Display search results as buttons
-    if not result.empty:
-        st.write('Search Results:')
-        for index, row in result.iterrows():
-            # Display the title, genres, and year
-            st.write(f"# {row['title']}")
-            st.write(f"Genres: {row['genres']}")
-            st.write(f"Released year: {row['year']}")
+if not result.empty:
+    st.write('Search Results:')
+    for index, row in result.iterrows():
+        # Display the title, genres, and year
+        st.write(f"# {row['title']}")
+        st.write(f"Genres: {row['genres']}")
+        st.write(f"Released year: {row['year']}")
 
-            # Add a button with a unique label and pass the index to the function
-            st.button(
-                f"Find recommendation for {row['title']} (Index: {index})", on_click=lambda: handle_click(index))
+        # Add a button with a unique label and pass the index to the function
+        st.button(
+            f"Find recommendation for {row['title']} (Index: {index})", on_click=lambda: handle_click(index))
