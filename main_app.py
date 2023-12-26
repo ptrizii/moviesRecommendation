@@ -9,6 +9,9 @@ result = pd.DataFrame()  # Initialize result as an empty DataFrame
 # Define a function to print something based on the film index
 
 
+def handle_click():
+    st.write("Button clicked!")
+
 def print_something(index):
     st.write(f"Function called for film with Index: {index}")
 
@@ -41,11 +44,4 @@ if not result.empty:
         st.write(f"Released year: {row['year']}")
 
         # Add a button with a unique label
-        button_label = f"Find recommendation for {row['title']} (Index: {index})"
-        button_clicked = st.button(button_label, key=index)
-
-        # Check if the button was clicked
-        if button_clicked:
-            # Call the function with the film index
-            print_something(index)
-            # You can add more actions or details for the selected movie using the index
+        if st.button(f"Find recommendation for {row['title']} (Index: {index})", on_click=handle_click)
