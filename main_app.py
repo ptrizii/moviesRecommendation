@@ -13,6 +13,10 @@ def print_something(index):
     st.write(f"Function called for film with Index: {index}")
 
 
+# Initialize session state
+if 'button_clicked' not in st.session_state:
+    st.session_state.button_clicked = False
+
 # Add title
 st.title('Movies Recommendation System')
 
@@ -45,6 +49,11 @@ if not result.empty:
         if st.button(button_label):
             # Call the function with the film index
             print_something(index)
+            # Set session state to indicate button click
+            st.session_state.button_clicked = True
             # You can add more actions or details for the selected movie using the index
-else:
-    st.write('No results found.')
+
+# Check if the button was clicked
+if st.session_state.button_clicked:
+    st.write("Button was clicked!")
+    st.session_state.button_clicked = False  # Reset the session state
