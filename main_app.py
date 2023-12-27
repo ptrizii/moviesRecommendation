@@ -3,54 +3,45 @@ import pandas as pd
 
 # Read data
 data = pd.read_csv('data.csv')
-columns_to_display = ['title', 'genres']
-result = pd.DataFrame()  # Initialize result as an empty DataFrame
 
-# Define functions for button clicks
+# Function to recommend movies based on the movie id
 
 
-def handle_click(index):
-    print_something(index)  # Call the function with the index
+def recommend_movies(movie_id):
+    # Replace this with your actual recommendation logic
+    st.write(f"Recommendations for movie with ID {movie_id}")
+
+# Streamlit app
 
 
-def print_something(index):
-    st.write(f"Function called for film with Index: {index}")
+def main():
+    st.title('Movie Recommender System')
 
+    # Add search bar for movies
+    search_term = st.text_input('Enter the movie title:')
 
-# Add title
-st.title('Movies Recommendation System')
-
-# Add search bar for movies
-search_term = st.text_input(
-    'Enter your favorite film title:', placeholder="The Conjuring")
-
-# Button for executing the search
-if st.button('Search'):
-    # Check if 'title' is in the columns
-    if 'title' in data.columns:
+    # Display the result
+    if st.button('Search'):
         # Filter data based on the search term
         result = data[data['title'].str.contains(search_term, case=False)]
-    else:
-        st.write('Error: The column "title" does not exist in the DataFrame.')
 
-if st.button('Click me'):
-    st.write("HI")
-else:
-    st.write("Do You know me?")
+        if not result.empty:
+            st.write('Search Results:')
+            for index, row in result.iterrows():
+                # Display the title, genres, and year
+                st.write(f"# {row['title']}")
+                st.write(f"Genres: {row['genres']}")
+                st.write(f"Released year: {row['year']}")
 
-    # Display search results as buttons
-if not result.empty:
-    st.write('Search Results:')
-    for index, row in result.iterrows():
-        # Display the title, genres, and year
-        st.write(f"# {row['title']}")
-        st.write(f"Genres: {row['genres']}")
-        st.write(f"Released year: {row['year']}")
+                # Add a button with a unique label and pass the id to the recommend function
+                if st.button(f"Recommend for {row['title']} (ID: {row['id']})"):
+                    recommend_movies(row['id'])
 
-        # Add a button with a unique label and pass the index to the function
-        # st.button(
-        #     f"Find recommendation for {row['title']} (Index: {index})", on_click=lambda: handle_click(index))
-        if st.button(f"Fin Recommendation for {row['title']} (index: {index})"):
-            st.write("this is your recommendation")
+            st.success("Movies found!")
         else:
-            st.write("Not found")
+            st.warning("The movie doesn't exist.")
+
+
+# Run the Streamlit app
+# if __name__ == '__main__':
+#     main()
