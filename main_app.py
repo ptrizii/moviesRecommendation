@@ -1,18 +1,17 @@
 import streamlit as st
 import pandas as pd
+import os
+import gcsfs
+import numpy as np
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'key.json'
 
-# Read data
+
+# Connect to the bucket
+fs = gcsfs.GCSFileSystem(project='solid-league-409409')
+
+# Open the file
+embd = np.load('gs://streamlitmovies-bucket/complete-embd.npy', allow_pickle=True)
 data = pd.read_csv('data.csv')
-
-# Function to recommend movies based on the movie id
-
-
-def recommend_movies(movie_id):
-    # Replace this with your actual recommendation logic
-    st.write(f"Recommendations for movie with ID {movie_id}")
-
-# Streamlit app
-
 
 def main():
     st.title('Movie Recommender System')
@@ -23,6 +22,8 @@ def main():
 
     if st.button("Show Recommendation"):
         st.write("Here is your recommendation")
+    
+    st.write(f"{embd[0]}")
 
 
 # Run the Streamlit app
