@@ -17,12 +17,12 @@ def recommend_movies(movie_id):
 def main():
     st.title('Movie Recommender System')
 
-    # Add search bar for movies
-    search_term = st.text_input('Enter the movie title:')
-
     movie_list = data['title'].values
 
-    selected_movies = st.selectbox("Find", movie_list)
+    selected_movies = st.selectbox("Type and select your favorite movie", movie_list)
+
+    if st.button("Show Recommendation"):
+        st.write("Here is your recommendation")
 
 
 # Run the Streamlit app
