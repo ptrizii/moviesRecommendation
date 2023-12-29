@@ -19,12 +19,12 @@ def main():
 
     movies_list = data['Title'].values
 
-    selected_movie = st.selectbox("Select or type your favorite movie", movies_list)
+    # selected_movie = st.selectbox("Select or type your favorite movie", movies_list)
 
-    if st.button("Show Recommendation"):
-        st.write("Here is your recommendation")
-    else:
-        st.write("Please choose a movie first")
+    # if st.button("Show Recommendation"):
+    #     st.write("Here is your recommendation")
+    # else:
+    #     st.write("Please choose a movie first")
 
 
 # Run the Streamlit app
