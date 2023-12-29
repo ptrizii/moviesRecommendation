@@ -1,16 +1,11 @@
 import streamlit as st
 import pandas as pd
-import os
-import gcsfs
-import numpy as np
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'key.json'
+from st_files_connection import FilesConnection
 
-
-# Connect to the bucket
-fs = gcsfs.GCSFileSystem(project='solid-league-409409')
-
-# Open the file
-embd = np.load('gs://streamlitmovies-bucket/complete-embd.npy', allow_pickle=True)
+# Create connection object and retrieve file contents.
+# Specify input format is a csv and to cache the result for 600 seconds.
+conn = st.connection('gcs', type=FilesConnection)
+embd = conn.read("streamlitmovies-bucket/complete-embd.npy", input_format="npy", ttl=600)
 data = pd.read_csv('data.csv')
 
 def main():

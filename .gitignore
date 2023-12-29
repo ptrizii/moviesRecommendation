@@ -2,12 +2,42 @@
 
 [connections.gcs]
 type = "service_account"
-project_id = "xxx"
-private_key_id = "xxx"
-private_key = "xxx"
-client_email = "xxx"
-client_id = "xxx"
+project_id = "solid-league-409409"
+private_key_id = "cbb221ede53bd53b5f1c625069f0b50ab37c2ad9"
+private_key = """
+-----BEGIN PRIVATE KEY-----
+MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDf8j3OHqnJ7yJj
+sMLvVft9arncFhpiXo751f+RXKDywyy4ngZB1h60QY6LQRRE+fagrmEb5cOeoh5n
+usbYGMQXLiRF/PX806fI7w4AkMh2MWyMPgdqPMmsb108XR8lqSYmFCXez0kldeUm
+6bJOLGMXc/4hYZtPlo8q3H3bxbl9EeYlkeWvrQ2nk0ofh3UcOO7HwS8W7FqcLFlI
+MDGWR2bIhC5BCs5epdqGswF5HA+SwEntBApHTt6HiQOiWXmoU3/ateskhUPE6+SW
+FiSRXyRlWILfcG5BYbEuFqjNQvAF8dJx+cKFtG36VcdB9ZQEQepfQJhbET7nwNMs
+zrPWzEr9AgMBAAECggEAFncANLJWQXPL7RixAV3Md+ESKm4MMQR/zrelJsGWQqwK
+Cy4M/iM62sW9xSHe5Ol3UFiV1LzYggwMxUaTBl/7ocCm8l9lFLrtuKYkbzGW7mZY
+V3wsdb+J0pKsVW8Y/gfpFAZO4zpDge7A8UWdtaJVwWdJHbOjJxl5HKlYNcjwqcdH
+Ff+kbR1nBlZc63YeTwHmfUC9rFA6IE9S/KUdQV9sI+/eDyxHeGkVZ64EtBhXR4dW
+WGrkKRLw6MvZ01idHnedLtYEgpH/iS8zLlPTdd9vffU94HBMQKGnmSvJIixuP1qb
++FqTpeV6nPWKYGENs7f7qeq0pXDkJqfSS2+A+WWDYQKBgQDzLMzdYPWuMDnbe8As
+PYQEQ6i4htTvag6HmnRNgiaeYOcajZzg1Vg/iFWrnrKglZnmcg1CzNwcFNtrW69P
+EkRg1RkEVWK+mBmQmiwyypz8S1lhidT7b4aHFLDaK+IztTyGApyXpcdszjqQ/NNy
+1gS1Zy38c8UfPc4HpCrxgdec3QKBgQDrwdOR1TYY2WnzvisdpFFszXf5wjh7IWTN
+84yQQGBQBx7VkiRk6xusHesmIMY7Y5OZpTlTBTxLDJ3RyE6yt3DdLTnxLGU10YIg
+hiZeKFh6sm/UFJ6f2L4Jy7Kkmy8XJpc0eBCuDeEqoEl1m9hiWvHLeatgizaHKf5I
+w43AfHD0oQKBgQCOnPCMyIdtH6Ve3iWnDHC3G4MArTqGKlnZFzEsH69MZSJEBVdC
+2HwHzooHu2uhF/uJFcxHJ+PSqDzCqqOWqOznKTKhwv3FL2iW0IQpSYBlyj7iIDaD
+OzXXVMAfQ2tGzfxvz2pM2ZGqcwwP6eaMS425YYirrK2nk9SX0KTKvE5aFQKBgQCo
+Akkz9C3JJ6dJ/IvdY+xjDUoiwzZdCT89RgM2CaqZXXmr2an2AVaHIgsh8NlUGXJm
+XEit0V1WXndZuNXcpr3X4RMZu/mkkNmbM/7DuxzS07a9/LPOVjeX44I7rBuy891t
+luLMJzf/mJrBJX7fGNCXoO1wr8T8LgD4+eNa+VPGAQKBgH8U+cB4/GqOPlaNazPv
+1RSfny7r3m1juskNRD8gkkheJlZ+/qtvKHLs+/2joqw4g7dUV/KeXuRD0AvbGBuX
+MDlIk5NO2v8z64Sb+t3k42VCvaK0Zi1RPXLiYurHlFSNS0hgd2XMkb2RGpKBua3Y
+G4NMd/R86t+jEg5RdzDSdmg6
+-----END PRIVATE KEY-----
+"""
+client_email = "streamlitmovies-service-accoun@solid-league-409409.iam.gserviceaccount.com"
+client_id = "109452957488364250019"
 auth_uri = "https://accounts.google.com/o/oauth2/auth"
 token_uri = "https://oauth2.googleapis.com/token"
 auth_provider_x509_cert_url = "https://www.googleapis.com/oauth2/v1/certs"
-client_x509_cert_url = "xxx"
+client_x509_cert_url = "https://www.googleapis.com/robot/v1/metadata/x509/streamlitmovies-service-accoun%40solid-league-409409.iam.gserviceaccount.com"
+universe_domain = "googleapis.com"
