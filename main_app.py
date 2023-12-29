@@ -10,7 +10,7 @@ conn = st.connection('gcs', type=FilesConnection)
 npy_bytes = conn.read("streamlitmovies-bucket/data.csv", input_fromat="csv", ttl=600)
 # Use numpy to load the bytes as an array
 # embd = np.load(BytesIO(npy_bytes))
-data = pd.read_csv('data.csv')
+# data = pd.read_csv('data.csv')
 
 def main():
     st.title('Movie Recommender System')
