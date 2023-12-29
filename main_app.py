@@ -20,7 +20,7 @@ def main():
     # Add search bar for movies
     search_term = st.text_input('Enter the movie title:')
 
-    movie_list = data['Title'].values
+    movie_list = data['title'].values
 
 
 # Run the Streamlit app
