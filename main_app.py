@@ -23,7 +23,7 @@ def main():
     if st.button("Show Recommendation"):
         st.write("Here is your recommendation")
     
-    st.write(f"{embd[0]}")
+    st.write("HI")
 
 
 # Run the Streamlit app
