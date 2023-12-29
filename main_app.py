@@ -17,9 +17,9 @@ def recommend_movies(movie_id):
 def main():
     st.title('Movie Recommender System')
 
-    movie_list = data['Title'].values
+    # movie_list = data['Title'].values
 
-    selected_movie = st.selectbox("Type or select movie", movie_list)
+    # selected_movie = st.selectbox("Type or select movie", movie_list)
 
-    if st.button("Show Recommendation"):
-        st.write("Here is your recommendation")
+    # if st.button("Show Recommendation"):
+    #     st.write("Here is your recommendation")
