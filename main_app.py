@@ -7,10 +7,9 @@ from st_files_connection import FilesConnection
 # Create connection object and retrieve file contents.
 # Specify input format is a csv and to cache the result for 600 seconds.
 conn = st.connection('gcs', type=FilesConnection)
-npy_bytes = conn.read(
-    "streamlitmovies-bucket/complete-embd.npy", ttl=600)
+npy_bytes = conn.read("streamlitmovies-bucket/complete-embd.npy", input_fromat="npy", ttl=600)
 # Use numpy to load the bytes as an array
-embd = np.load(BytesIO(npy_bytes))
+# embd = np.load(BytesIO(npy_bytes))
 data = pd.read_csv('data.csv')
 
 def main():
