@@ -17,31 +17,9 @@ def recommend_movies(movie_id):
 def main():
     st.title('Movie Recommender System')
 
-    # Add search bar for movies
-    search_term = st.text_input('Enter the movie title:')
+    movie_list = data['Title'].values
 
-    # Display the result
-    if st.button('Search'):
-        # Filter data based on the search term
-        result = data[data['title'].str.contains(search_term, case=False)]
+    selected_movie = st.selectbox("Type or select movie", movie_list)
 
-        if not result.empty:
-            st.write('Search Results:')
-            for index, row in result.iterrows():
-                # Display the title, genres, and year
-                st.write(f"# {row['title']}")
-                st.write(f"Genres: {row['genres']}")
-                st.write(f"Released year: {row['year']}")
-
-                # Add a button with a unique label and pass the id to the recommend function
-                if st.button(f"Recommend for {row['title']} (ID: {row['id']})"):
-                    recommend_movies(row['id'])
-
-            st.success("Movies found!")
-        else:
-            st.warning("The movie doesn't exist.")
-
-
-# Run the Streamlit app
-# if __name__ == '__main__':
-#     main()
+    if st.button("Show Recommendation"):
+        st.write("Here is your recommendation")
