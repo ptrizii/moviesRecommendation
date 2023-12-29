@@ -22,6 +22,8 @@ def main():
 
     movie_list = data['title'].values
 
+    selected_movies = st.selectbox("Find", movie_list)
+
 
 # Run the Streamlit app
 if __name__ == '__main__':
