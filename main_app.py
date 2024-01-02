@@ -10,7 +10,7 @@ project_id = "solid-league-409409"
 client = storage.Client(project=project_id)
 
 # Set the environment variable for Google Cloud credentials
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "key.json"
+# os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "key.json"
 
 
 # Create connection object and retrieve file contents.
@@ -24,7 +24,7 @@ data = pd.read_csv('data.csv')
 
 client = storage.Client()
 bucket = client.get_bucket("streamlitmovies-bucket")
-blob = bucket.blob("data.csv")
+blob = bucket.get_blob("data.csv")
 
 def main():
     st.title('Movie Recommender System')
