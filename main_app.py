@@ -22,7 +22,7 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "solid-league-409409-8fbfe0e2094d
 data = pd.read_csv('data.csv')
 
 client = storage.Client()
-# bucket = client.get_bucket("streamlitmovies-bucket")
+bucket = client.get_bucket("streamlitmovies-bucket")
 # blob = bucket.get_blob("data.csv")
 
 def main():
