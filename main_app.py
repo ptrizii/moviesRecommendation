@@ -21,8 +21,8 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "key.json"
 # embd = np.load(BytesIO(npy_bytes))
 data = pd.read_csv('data.csv')
 
-# client = storage.Client()
-# bucket = client.get_bucket("streamlitmovies-bucket")
+client = storage.Client()
+bucket = client.get_bucket("streamlitmovies-bucket")
 # blob = bucket.get_blob("data.csv")
 
 def main():
