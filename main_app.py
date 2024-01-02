@@ -13,7 +13,7 @@ data = pd.read_csv('data.csv')
 
 # Replace with your project ID
 fs = gcsfs.GCSFileSystem(project="solid-league-409409")
-with fs.open("streamlitmovies-bucket/complete-embd.npy", "rb") as f:
+with fs.open("streamlitmovies-bucket/data.csv", "rb") as f:
     npy_bytes = f.read()
 
 def main():
