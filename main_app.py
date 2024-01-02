@@ -23,7 +23,7 @@ data = pd.read_csv('data.csv')
 
 client = storage.Client()
 bucket = client.get_bucket("streamlitmovies-bucket")
-blob = bucket.get_blob("data.csv")
+# blob = bucket.get_blob("data.csv")
 
 def main():
     st.title('Movie Recommender System')
