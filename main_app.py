@@ -10,7 +10,7 @@ import os
 # client = storage.Client(project=project_id)
 
 # Set the environment variable for Google Cloud credentials
-# os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "solid-league-409409-8fbfe0e2094d.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "key.json"
 
 # Create connection object and retrieve file contents.
 # Specify input format is a csv and to cache the result for 600 seconds.
