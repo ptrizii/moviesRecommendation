@@ -6,8 +6,8 @@ from google.cloud import storage
 import os
 
 # Explicitly set the Google Cloud project ID
-project_id = "solid-league-409409"
-client = storage.Client(project=project_id)
+# project_id = "solid-league-409409"
+# client = storage.Client(project=project_id)
 
 # Set the environment variable for Google Cloud credentials
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "solid-league-409409-8fbfe0e2094d.json"
