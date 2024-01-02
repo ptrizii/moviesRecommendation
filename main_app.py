@@ -1,3 +1,4 @@
+import gcsfs
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -5,11 +6,15 @@ from st_files_connection import FilesConnection
 
 # Create connection object and retrieve file contents.
 # Specify input format is a csv and to cache the result for 600 seconds.
-conn = st.connection('gcs', type=FilesConnection)
-df = conn.read("streamlitmovies-bucket/data.csv",input_format="csv", ttl=600)
-# Use numpy to load the bytes as an array
-# embd = np.load(BytesIO(npy_bytes))
+# conn = st.connection('gcs', type=FilesConnection)
+# df = conn.read("streamlitmovies-bucket/data.csv",input_format="csv", ttl=600)
+
 data = pd.read_csv('data.csv')
+
+# Replace with your project ID
+fs = gcsfs.GCSFileSystem(project="solid-league-409409")
+with fs.open("streamlitmovies-bucket/complete-embd.npy", "rb") as f:
+    npy_bytes = f.read()
 
 def main():
     st.title('Movie Recommender System')
