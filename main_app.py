@@ -3,6 +3,11 @@ import pandas as pd
 import numpy as np
 from st_files_connection import FilesConnection
 from google.cloud import storage
+import os
+
+# Set the environment variable for Google Cloud credentials
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "key.json"
+
 
 # Create connection object and retrieve file contents.
 # Specify input format is a csv and to cache the result for 600 seconds.
