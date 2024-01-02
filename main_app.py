@@ -10,7 +10,7 @@ project_id = "solid-league-409409"
 client = storage.Client(project=project_id)
 
 # Set the environment variable for Google Cloud credentials
-# os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "key.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "solid-league-409409-8fbfe0e2094d.json"
 
 
 # Create connection object and retrieve file contents.
