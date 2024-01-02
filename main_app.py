@@ -39,7 +39,7 @@ def main():
     st.title("Google Cloud Data in Streamlit")
 
     # Define Google Cloud Storage details
-    gcs_bucket_name = "your-gcs-bucket-name"
+    gcs_bucket_name = "streamlitmovies-bucket"
     gcs_file_name = "complete-embd.npy"
 
     # Fetch NPY data from Google Cloud Storage
