@@ -91,8 +91,7 @@ def get_recommendations(query_index, data, embedding, k=10):
     # query_index = query_title
     data_sorted = data.copy()
     # calculated weighted sim
-    similarity_scores = weight_similarity(
-        query_index, embedding, data['genres'])
+    similarity_scores = weight_similarity(query_index, embedding, data['genres'])
     data_sorted['similarity'] = similarity_scores
     # # sorted the list
     data_sorted = data_sorted.sort_values(by='similarity', ascending=False)
@@ -125,7 +124,7 @@ def main():
         # st.write(cos_scores[selected_index])
         # st.write(w_sim[selected_index])
         film_recommendation = get_recommendations(selected_index, data_copy, np_array)
-        st.dataframe(film_recommendation)
+        st.write(film_recommendation)
         col1, col2 = st.columns(2)
 
         with col1:
