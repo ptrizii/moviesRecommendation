@@ -92,12 +92,12 @@ def get_recommendations(query_index, data, embedding, k=10):
     data_sorted = data.copy()
     # calculated weighted sim
     similarity_scores = weight_similarity(query_index, embedding, data['genres'])
-    # data_sorted['similarity'] = similarity_scores
+    data_sorted['similarity'] = similarity_scores
     # # # sorted the list
     # data_sorted = data_sorted.sort_values(by='similarity', ascending=False)
     # data_sorted = data_sorted.loc[1:k+1]
 
-    return similarity_scores
+    return data_sorted
 
 def main():
     st.title('Movie Recommender System')
