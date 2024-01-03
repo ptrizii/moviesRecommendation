@@ -113,22 +113,17 @@ def main():
         st.write(selected_index)
         # st.write(film_recommendation)
         st.write(data_copy.loc[selected_index, 'title'])
-        # jac_scores = jaccard_similarity(selected_index, data_copy['genres'])
-        # cos_scores = cosine_similarity(np_array[selected_index], np_array)
-        # st.write(data_copy.shape)
-        # st.write(len(jac_scores))
-        # st.write(len(cos_scores))
-        # w_sim = weight_similarity(selected_index, np_array, data_copy['genres'])
-        # st.write(jac_scores[selected_index])
-        # st.write(cos_scores[selected_index])
-        # st.write(w_sim[selected_index])
+     
         film_recommendation = get_recommendations(selected_index, data_copy, np_array)
         st.write(film_recommendation)
         col1, col2 = st.columns(2)
 
         with col1:
             with st.container(border=True):
-                st.write(film_recommendation.loc[1,'title'])
+                st.write(film_recommendation.loc[0,'title'])
+                st.write(film_recommendation.loc[0, 'genres'])
+                st.write(film_recommendation.loc[0, 'overview'])
+
             
             with st.container(border=True):
                 st.write("film 2")
