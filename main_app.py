@@ -73,8 +73,8 @@ def weight_similarity(query_index, embedding, genres):
     cosine_scores = np.zeros_like(jaccard_scores)
 
     for i in range(len(jaccard_score)):
-        if jaccard_score[i] > 0:
-            cosine_score[i] = cosine_score(embedding[query_index], embedding[i])
+        if jaccard_scores[i] > 0:
+            cosine_scores[i] = cosine_score(embedding[query_index], embedding[i])
         else:
             cosine_scores[i] = 0
     # calculate weighted similarity
