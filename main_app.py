@@ -42,10 +42,10 @@ def main():
 
         with col1:
             with st.container(border=True):
-                st.write("Film 1")
+                st.write(f"{film_recommendation.loc[1, 'title']}")
             
             with st.container(border=True):
-                st.write("Film 2")
+                st.write(f"{film_recommendation.loc[1, 'title']}")
 
         with col2:
             with st.container(border=True):
