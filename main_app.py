@@ -87,8 +87,8 @@ def cosine_similarity(embd_query, embedding):
 def main():
     st.title('Movie Recommender System')
 
-    movie_list = data['title'][9000:10000].values
-    data_copy = data.loc[9000:10000].reset_index()
+    movie_list = data['title'][9000:9999].values
+    data_copy = data.loc[9000:9999].reset_index()
 
     selected_index = st.selectbox("Type and select your favorite movie", range(len(movie_list)), format_func=lambda i: movie_list[i])
     selected_index = int(selected_index)
