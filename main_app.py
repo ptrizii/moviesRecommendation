@@ -31,7 +31,7 @@ def main():
 
     if st.button("Show Recommendation"):
         st.write(selected_index)
-        st.write(np_array[selected_index])
+        # st.write(np_array[selected_index])
 
         col1, col2 = st.columns(2)
 
