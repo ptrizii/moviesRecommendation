@@ -15,7 +15,7 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "key.json"
 data = pd.read_csv('data.csv')
 client = storage.Client()
 bucket = client.get_bucket("streamlitmovies-bucket")
-blob = bucket.get_blob("complete-embd.npy")
+blob = bucket.get_blob("embd-18-20k.npy")
 # Download the content of the blob as bytes
 blob_content = blob.download_as_bytes()
 # # Convert the content to a NumPy array
