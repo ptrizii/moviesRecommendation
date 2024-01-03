@@ -67,22 +67,15 @@ def weight_similarity(query_index, embedding, genres):
 
     # Calculate jaccard scores
     jaccard_scores = jaccard_similarity(query_index, genres)
-    # Initialize an array to store the cosine scores
-    cosine_scores = np.zeros_like(jaccard_scores)
 
-    # Check if Jaccard score is not zero, then calculate cosine scores
-    non_zero_jaccard_indices = np.nonzero(jaccard_scores)
-    if len(non_zero_jaccard_indices[0]) > 0:
-        non_zero_indices = non_zero_jaccard_indices[0]
-        # Calculate cosine scores for non-zero Jaccard scores
-        cosine_scores[non_zero_indices] = cosine_similarity(
-            embedding[query_index], embedding[non_zero_indices])
+    # Initialize an array to store the cosine scores
+    cosine_scores = cosine_similarity(embedding[query_index], embedding)
 
     # calculate weighted similarity
-    weigted_jaccard = jaccard_scores*w_jac
-    weighted_cosine = cosine_scores*w_cos
+    weighted_jaccard = jaccard_scores * w_jac
+    weighted_cosine = cosine_scores * w_cos
 
-    similarity_scores = weigted_jaccard + weighted_cosine
+    similarity_scores = weighted_jaccard + weighted_cosine
 
     return similarity_scores
 
@@ -90,7 +83,7 @@ def main():
     st.title('Movie Recommender System')
 
     movie_list = data['title'][9000:9999].values
-    data_copy = data.loc[9000:9999].reset_index()
+    data_copy = data.loc[9000:].reset_index()
 
     selected_index = st.selectbox("Type and select your favorite movie", range(len(movie_list)), format_func=lambda i: movie_list[i])
     selected_index = int(selected_index)
