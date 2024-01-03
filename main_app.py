@@ -4,6 +4,7 @@ import numpy as np
 from st_files_connection import FilesConnection
 from google.cloud import storage
 import os
+from recommendation import get_recommendations
 
 # Explicitly set the Google Cloud project ID
 # project_id = "solid-league-409409"
@@ -34,8 +35,18 @@ def main():
 
     if st.button("Show Recommendation"):
         st.write("Here is your recommendation")
+
+        col1, col2 = st.columns(2)
+
+        with col1:
+            with st.container(border=True):
+                st.write("Film 1")
+            
+            with st.container(border=True):
+                st.write("Film 2")
     
-    st.write("HI")
+    st.snow()
+    
 
 # Run the Streamlit app
 if __name__ == '__main__':
