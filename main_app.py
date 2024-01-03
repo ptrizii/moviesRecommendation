@@ -44,8 +44,15 @@ def main():
             
             with st.container(border=True):
                 st.write("Film 2")
-    
-    st.snow()
+
+        with col2:
+            with st.container(border=True):
+                st.write("Film 1")
+
+            with st.container(border=True):
+                st.write("Film 2")
+                
+        st.snow()
     
 
 # Run the Streamlit app
