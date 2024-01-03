@@ -88,7 +88,7 @@ def main():
     st.title('Movie Recommender System')
 
     movie_list = data['title'][9000:10000].values
-    data_copy = data.loc[9000:10000].reset_index()
+    data_copy = data.loc[9000:-1].reset_index()
 
     selected_index = st.selectbox("Type and select your favorite movie", range(len(movie_list)), format_func=lambda i: movie_list[i])
     selected_index = int(selected_index)
@@ -101,6 +101,7 @@ def main():
         st.write(data_copy.loc[selected_index, 'title'])
         jac_scores = jaccard_similarity(selected_index, data_copy['genres'])
         cos_scores = cosine_similarity(np_array[selected_index], np_array)
+        st.write(data_copy.shape)
         st.write(len(jac_scores))
         st.write(len(cos_scores))
         st.area_chart
