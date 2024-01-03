@@ -35,7 +35,7 @@ def main():
 
     if st.button("Show Recommendation"):
         # film_recommendation = get_recommendations(selected_movies)
-
+        st.write(selected_index)
         col1, col2 = st.columns(2)
 
         with col1:
