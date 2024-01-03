@@ -94,9 +94,9 @@ def main():
         jac_scores = jaccard_similarity(selected_index, data_copy['genres'])
         cos_scores = cosine_similarity(np_array[selected_index], np_array)
         jac_scores = 0.3 * jac_scores
-        # cos_scores = 0.7 * cos_scores
+        cos_scores = 0.7 * cos_scores
         st.write(jac_scores[selected_index])
-        # st.write(cos_scores[selected_index])
+        st.write(cos_scores[selected_index])
         # st.write(w_scores[selected_index])
         col1, col2 = st.columns(2)
 
