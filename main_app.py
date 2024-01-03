@@ -63,19 +63,14 @@ def cosine_similarity(embd_query, embedding):
     return scores
 
 
-def weight_similarity(query_index, embedding, genres):
+def weight_similarity(jac_scores, cos_scores):
     # Define weight for each similarity
     w_jac = 0.3
     w_cos = 0.7
 
-    # Calculate jaccard scores
-    jaccard_scores = jaccard_similarity(query_index, genres)
-    # Initialize an array to store the cosine scores
-    cosine_scores = cosine_similarity(embedding[query_index], embedding)
-
     # calculate weighted similarity
-    weigted_jaccard = jaccard_scores*w_jac
-    weighted_cosine = cosine_scores*w_cos
+    weigted_jaccard = jac_scores*w_jac
+    weighted_cosine = cos_scores*w_cos
 
     similarity_scores = weigted_jaccard + weighted_cosine
 
@@ -97,9 +92,9 @@ def main():
         # st.write(film_recommendation)
         st.write(data_copy.loc[selected_index, 'title'])
 
-        # jac_scores = jaccard_similarity(selected_index, data_copy['genres'])
-        # cos_scores = cosine_similarity(np_array[selected_index], np_array)
-        w_scores = weight_similarity(selected_index, np_array, data_copy['genres'])
+        jac_scores = jaccard_similarity(selected_index, data_copy['genres'])
+        cos_scores = cosine_similarity(np_array[selected_index], np_array)
+        w_scores = weight_similarity(jac_scores, cos_scores)
         # st.write(jac_scores[selected_index])
         # st.write(cos_scores[selected_index])
         st.write(w_scores[selected_index])
