@@ -23,8 +23,7 @@ def get_recommendations(query_index, data, embedding, k=10):
     # query_index = query_title
     data_sorted = data.copy()
     # calculated weighted sim
-    similarity_scores = weight_similarity(
-        query_index, embedding, data['genres'])
+    similarity_scores = weight_similarity(query_index, embedding, data['genres'])
     data_sorted['similarity'] = similarity_scores
     # # sorted the list
     data_sorted = data_sorted.sort_values(by='similarity', ascending=False)

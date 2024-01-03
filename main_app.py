@@ -31,7 +31,7 @@ def main():
     selected_index = int(selected_index)
 
     if st.button("Show Recommendation"):
-        # film_recommendation = get_recommendations(selected_index, data.loc[18000:20000].reset_index(), np_array)
+        film_recommendation = get_recommendations(selected_index, data_copy, np_array)
 
         # st.write(np_array[selected_index])
         st.write(selected_index)
