@@ -24,11 +24,12 @@ np_array = np.load(io.BytesIO(blob_content))
 def main():
     st.title('Movie Recommender System')
 
-    movie_list = data['title'][5000:].values
+    movie_list = data['title'][18000:20000].values
 
     selected_index = st.selectbox("Type and select your favorite movie", range(len(movie_list)), format_func=lambda i: movie_list[i])
 
     if st.button("Show Recommendation"):
+        st.write(selected_index)
         with st.spinner("Retrieving the recommendation"):
             film_recommendation = get_recommendations(selected_index, data[18000:20000], np_array)
 
