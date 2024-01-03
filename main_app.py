@@ -7,11 +7,10 @@ import os
 from recommendation import get_recommendations
 import io
 
-
 # Set the environment variable for Google Cloud credentials
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "key.json"
 
-
+# Load data
 data = pd.read_csv('data.csv')
 client = storage.Client()
 bucket = client.get_bucket("streamlitmovies-bucket")
@@ -20,6 +19,29 @@ blob = bucket.get_blob("embd-18-20k.npy")
 blob_content = blob.download_as_bytes()
 # # Convert the content to a NumPy array
 np_array = np.load(io.BytesIO(blob_content))
+
+
+def jaccard_score(set1, set2):
+    intersection = len(set1.intersection(set2))
+    union = len(set1.union(set2))
+    return intersection / union if union != 0 else 0
+
+
+def jaccard_similarity(index, genre):
+    # Split genres and convert into list
+    genre_set = genre.apply(lambda x: set(x.split(', '))).to_list()
+    jaccard_similarities = []
+    set1 = genre_set[index]
+
+    for i in range(len(genre_set)):
+        scores = []
+        set2 = genre_set[i]
+        score = jaccard_score(set1, set2)
+
+        jaccard_similarities.append(score)
+
+    jaccard_similarities = np.array(jaccard_similarities)
+    return jaccard_similarities
 
 def main():
     st.title('Movie Recommender System')
@@ -31,13 +53,15 @@ def main():
     selected_index = int(selected_index)
 
     if st.button("Show Recommendation"):
-        # with st.spinner("We pick up your recommendations"):
-        #     film_recommendation = get_recommendations(selected_index, data_copy, np_array)
 
         # st.write(np_array[selected_index])
         st.write(selected_index)
         # st.write(film_recommendation)
         st.write(data_copy.loc[selected_index, 'title'])
+
+        jac_scores = jaccard_similarity(selected_index, data_copy['genres'])
+
+        st.write(jac_scores[selected_index])
 
         col1, col2 = st.columns(2)
 
