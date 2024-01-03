@@ -27,7 +27,7 @@ def main():
     movie_list = data['title'][18000:20000].values
     movie_index =  data.index.tolist()
 
-    selected_index = st.selectbox("Type and select your favorite movie", range(len(movie_list)), format_func=lambda i: movie_index[i])
+    selected_index = st.selectbox("Type and select your favorite movie", range(len(movie_list)), format_func=lambda i: movie_list[i])
 
     if st.button("Show Recommendation"):
         st.write(selected_index)
