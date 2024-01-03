@@ -34,7 +34,7 @@ def main():
         with st.spinner("We pick up your recommendation"):
             film_recommendation = get_recommendations(selected_index, data.loc[18000:20000], np_array)
 
-        st.write(np_array[selected_index])
+        # st.write(np_array[selected_index])
         st.write(selected_index)
         # st.write(np_array[selected_index])
 
