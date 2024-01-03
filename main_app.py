@@ -114,7 +114,7 @@ def main():
 
         for index, row in film_recommendation.iterrows():
             with st.container(border=True):
-                st.write(f"<h4 style='text-align: center;'>{row['movie_number']}. {row['title']}</h4>", unsafe_allow_html=True)
+                st.write(f"<h4 style='text-align: center;'>{index+1}. {row['title']}</h4>", unsafe_allow_html=True)
                 st.write(f"Genre: {row['genres']}")
                 st.write(row['short_overview'])
 
