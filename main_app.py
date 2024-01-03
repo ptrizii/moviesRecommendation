@@ -17,9 +17,9 @@ client = storage.Client()
 bucket = client.get_bucket("streamlitmovies-bucket")
 blob = bucket.get_blob("embd-18-20k.npy")
 # Download the content of the blob as bytes
-blob_content = blob.download_as_bytes()
-# # Convert the content to a NumPy array
-np_array = np.load(io.BytesIO(blob_content))
+# blob_content = blob.download_as_bytes()
+# # # Convert the content to a NumPy array
+# np_array = np.load(io.BytesIO(blob_content))
 
 def main():
     st.title('Movie Recommender System')
