@@ -25,7 +25,7 @@ def main():
     st.title('Movie Recommender System')
 
     movie_list = data['title'][18000:20000].values
-    movie_index =  data.index.tolist()
+    data_copy = data.loc[18000:20000].reset_index()
 
     selected_index = st.selectbox("Type and select your favorite movie", range(len(movie_list)), format_func=lambda i: movie_list[i])
     selected_index = int(selected_index)
@@ -36,6 +36,7 @@ def main():
         # st.write(np_array[selected_index])
         st.write(selected_index)
         # st.write(film_recommendation)
+        st.write(data_copy.loc[selected_index, 'title'])
 
         col1, col2 = st.columns(2)
 
