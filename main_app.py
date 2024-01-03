@@ -93,7 +93,7 @@ def get_recommendations(query_index, data, embedding, k=10):
     # calculated weighted sim
     similarity_scores = weight_similarity(query_index, embedding, data['genres'])
     data_sorted['similarity'] = similarity_scores
-    data_sorted['short_overview'] = data_sorted['overview'].apply(lambda x: ' '.join(x.split()[:15]))
+    data_sorted['short_overview'] = data_sorted['overview'].apply(lambda x: ' '.join(x.split()[:20]))
     # # # sorted the list
     data_sorted = data_sorted.sort_values(by='similarity', ascending=False)
 
