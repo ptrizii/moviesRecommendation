@@ -128,7 +128,7 @@ def main():
 
         with col1:
             with st.container(border=True):
-                st.write(film_recommendation['title'][0])
+                st.write(film_recommendation.loc[1,'title'])
             
             with st.container(border=True):
                 st.write("film 2")
