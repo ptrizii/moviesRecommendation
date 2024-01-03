@@ -96,7 +96,7 @@ def get_recommendations(query_index, data, embedding, k=10):
     # # # sorted the list
     data_sorted = data_sorted.sort_values(by='similarity', ascending=False)
 
-    return data_sorted[1:k+1]
+    return data_sorted[1:k+1].reset_index()
 
 def main():
     st.title('Movie Recommender System')
