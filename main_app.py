@@ -120,36 +120,56 @@ def main():
 
         with col1:
             with st.container(border=True):
-                st.write(film_recommendation.loc[0,'title'])
-                st.write(film_recommendation.loc[0, 'genres'])
+                st.write(
+                    f"<h3 style='text-align: center;'>{film_recommendation.loc[0, 'title']}</h3>", unsafe_allow_html=True)
+                st.write(f"Genre: {film_recommendation.loc[0, 'genres']}")
                 st.write(film_recommendation.loc[0, 'overview'])
 
             with st.container(border=True):
                 st.write(film_recommendation.loc[2, 'title'])
-                st.write(film_recommendation.loc[2, 'genres'])
+                st.write(f"Genre: {film_recommendation.loc[2, 'genres']}")
                 st.write(film_recommendation.loc[2, 'overview'])
 
             with st.container(border=True):
                 st.write(film_recommendation.loc[4, 'title'])
-                st.write(film_recommendation.loc[4, 'genres'])
+                st.write(f"Genre: {film_recommendation.loc[4, 'genres']}")
                 st.write(film_recommendation.loc[4, 'overview'])
 
             with st.container(border=True):
                 st.write(film_recommendation.loc[6, 'title'])
-                st.write(film_recommendation.loc[6, 'genres'])
+                st.write(f"Genre: {film_recommendation.loc[4, 'genres']}")
                 st.write(film_recommendation.loc[6, 'overview'])
 
             with st.container(border=True):
                 st.write(film_recommendation.loc[8, 'title'])
-                st.write(film_recommendation.loc[8, 'genres'])
+                st.write(f"Genre: {film_recommendation.loc[8, 'genres']}")
                 st.write(film_recommendation.loc[8, 'overview'])
 
         with col2:
             with st.container(border=True):
                 st.write(film_recommendation.loc[1, 'title'])
-                st.write(film_recommendation.loc[1, 'genres'])
+                st.write(f"Genre: {film_recommendation.loc[1, 'genres']}")
                 st.write(film_recommendation.loc[1, 'overview'])
 
+            with st.container(border=True):
+                st.write(film_recommendation.loc[3, 'title'])
+                st.write(f"Genre: {film_recommendation.loc[3, 'genres']}")
+                st.write(film_recommendation.loc[3, 'overview'])
+
+            with st.container(border=True):
+                st.write(film_recommendation.loc[5, 'title'])
+                st.write(f"Genre: {film_recommendation.loc[5, 'genres']}")
+                st.write(film_recommendation.loc[5, 'overview'])
+
+            with st.container(border=True):
+                st.write(film_recommendation.loc[7, 'title'])
+                st.write(f"Genre: {film_recommendation.loc[7, 'genres']}")
+                st.write(film_recommendation.loc[7, 'overview'])
+
+            with st.container(border=True):
+                st.write(film_recommendation.loc[9, 'title'])
+                st.write(f"Genre: {film_recommendation.loc[9, 'genres']}")
+                st.write(film_recommendation.loc[9, 'overview'])
         st.snow()
     
 
