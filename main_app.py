@@ -30,8 +30,8 @@ def main():
 
     if st.button("Show Recommendation"):
         st.write(selected_index)
-        with st.spinner("Retrieving the recommendation"):
-            film_recommendation = get_recommendations(selected_index, data[18000:20000], np_array)
+        # with st.spinner("Retrieving the recommendation"):
+        #     film_recommendation = get_recommendations(selected_index, data[18000:20000], np_array)
 
         st.write(selected_index)
         col1, col2 = st.columns(2)
