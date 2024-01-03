@@ -17,10 +17,9 @@ client = storage.Client()
 bucket = client.get_bucket("streamlitmovies-bucket")
 blob = bucket.get_blob("complete-embd.npy")
 # Read the content of the blob
-blob_content = blob.download_as_text()
-
-# Convert the content to a NumPy array
-np_array = np.load(io.BytesIO(blob_content))
+# blob_content = blob.download_as_text()
+# # Convert the content to a NumPy array
+# np_array = np.load(io.BytesIO(blob_content))
 
 def main():
     st.title('Movie Recommender System')
@@ -32,6 +31,7 @@ def main():
     if st.button("Show Recommendation"):
         with st.spinner("Retrieving the recommendation"):
             film_recommendation = get_recommendations(selected_index, data[5000:], np_array[5000:])
+
         st.write(selected_index)
         col1, col2 = st.columns(2)
 
