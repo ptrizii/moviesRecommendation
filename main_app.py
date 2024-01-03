@@ -13,7 +13,7 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "key.json"
 data = pd.read_csv('data.csv')
 client = storage.Client()
 bucket = client.get_bucket("streamlitmovies-bucket")
-blob = bucket.get_blob("embd-18-20k.npy")
+blob = bucket.get_blob("embd-9-10k.npy")
 # Download the content of the blob as bytes
 blob_content = blob.download_as_bytes()
 # # Convert the content to a NumPy array
@@ -78,8 +78,8 @@ def weight_similarity(jac_scores, cos_scores):
 def main():
     st.title('Movie Recommender System')
 
-    movie_list = data['title'][18000:20000].values
-    data_copy = data.loc[18000:20000].reset_index()
+    movie_list = data['title'][9000:10000].values
+    data_copy = data.loc[9000:10000].reset_index()
 
     selected_index = st.selectbox("Type and select your favorite movie", range(len(movie_list)), format_func=lambda i: movie_list[i])
     selected_index = int(selected_index)
@@ -93,7 +93,7 @@ def main():
 
         jac_scores = jaccard_similarity(selected_index, data_copy['genres'])
         cos_scores = cosine_similarity(np_array[selected_index], np_array)
-        # jac_scores = 0.3 * jac_scores
+        jac_scores = 0.3 * jac_scores
         # cos_scores = 0.7 * cos_scores
         st.write(jac_scores[selected_index])
         # st.write(cos_scores[selected_index])
