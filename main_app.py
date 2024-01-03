@@ -95,7 +95,7 @@ def get_recommendations(query_index, data, embedding, k=10):
     data_sorted['similarity'] = similarity_scores
     # # sorted the list
     data_sorted = data_sorted.sort_values(by='similarity', ascending=False)
-    data_sorted = data_sorted.loc[1:k+1, 'title']
+    data_sorted = data_sorted.loc[1:k+1]
 
     return data_sorted
 
