@@ -16,12 +16,8 @@ data = pd.read_csv('data.csv')
 client = storage.Client()
 bucket = client.get_bucket("streamlitmovies-bucket")
 blob = bucket.get_blob("complete-embd.npy")
-# Open the blob as a readable stream
-stream = blob.open_read()
-# Stream and process the data in chunks
-chunk_size = 1024  # Adjust the chunk size based on your needs
 # Download the content of the blob as bytes
-# blob_content = blob.download_as_bytes()
+blob_content = blob.download_as_bytes()
 # # Convert the content to a NumPy array
 # np_array = np.load(io.BytesIO(blob_content))
 
