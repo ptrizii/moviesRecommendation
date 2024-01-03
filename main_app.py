@@ -31,10 +31,10 @@ def main():
 
     movie_list = data['title'].values
 
-    selected_movies = st.selectbox("Type and select your favorite movie", movie_list)
+    selected_index = st.selectbox("Type and select your favorite movie", range(len(movie_list)), format_func=lambda i: movie_list[i])
 
     if st.button("Show Recommendation"):
-        st.write("Here is your recommendation")
+        # film_recommendation = get_recommendations(selected_movies)
 
         col1, col2 = st.columns(2)
 
@@ -51,7 +51,7 @@ def main():
 
             with st.container(border=True):
                 st.write("Film 2")
-                
+
         st.snow()
     
 
