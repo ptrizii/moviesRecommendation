@@ -43,6 +43,25 @@ def jaccard_similarity(index, genre):
     jaccard_similarities = np.array(jaccard_similarities)
     return jaccard_similarities
 
+
+def cosine_score(embd1, embd2):
+    dot_product = np.dot(embd1, embd2)
+    norm_vec1 = np.linalg.norm(embd1)
+    norm_vec2 = np.linalg.norm(embd2)
+    # Calculate cosim score
+    cosim_score = dot_product / (norm_vec1 * norm_vec2)
+    return cosim_score
+
+
+def cosine_similarity(embd_query, embedding):
+    scores = []
+    for i in range(len(embedding)):
+        score = cosine_score(embd_query, embedding[i])
+        scores.append(score)
+
+    scores = np.array(scores)
+    return scores
+
 def main():
     st.title('Movie Recommender System')
 
@@ -60,9 +79,12 @@ def main():
         st.write(data_copy.loc[selected_index, 'title'])
 
         jac_scores = jaccard_similarity(selected_index, data_copy['genres'])
+        cos_scores = cosine_similarity(np_array[selected_index], np_array)
+
+
 
         st.write(jac_scores[selected_index])
-
+        st.write(cos_scores[selected_index])
         col1, col2 = st.columns(2)
 
         with col1:
