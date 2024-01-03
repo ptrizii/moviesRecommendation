@@ -82,12 +82,13 @@ def weight_similarity(query_index, embedding, genres):
             embedding[query_index], embedding[non_zero_indices])
 
     # calculate weighted similarity
-    weigted_jaccard = jaccard_scores*w_jac
-    weighted_cosine = cosine_scores*w_cos
+    weighted_jaccard = jaccard_scores * w_jac
+    weighted_cosine = cosine_scores * w_cos
 
-    similarity_scores = weigted_jaccard + weighted_cosine
+    similarity_scores = weighted_jaccard + weighted_cosine
 
     return similarity_scores
+
 
 def main():
     st.title('Movie Recommender System')
