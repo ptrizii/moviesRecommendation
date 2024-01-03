@@ -120,56 +120,74 @@ def main():
 
         with col1:
             with st.container(border=True):
-                st.write(
-                    f"<h3 style='text-align: center;'>{film_recommendation.loc[0, 'title']}</h3>", unsafe_allow_html=True)
+                st.write(f"<h4 style='text-align: center;'>{film_recommendation.loc[0, 'title']}</h4>", unsafe_allow_html=True)
                 st.write(f"Genre: {film_recommendation.loc[0, 'genres']}")
-                st.write(film_recommendation.loc[0, 'overview'])
+                st.write(film_recommendation.loc[0, 'overview'].apply(
+                    lambda x: ' '.join(x.split()[:15])))
 
             with st.container(border=True):
-                st.write(film_recommendation.loc[2, 'title'])
+                st.write(
+                    f"<h4 style='text-align: center;'>{film_recommendation.loc[2, 'title']}</h4>", unsafe_allow_html=True)
                 st.write(f"Genre: {film_recommendation.loc[2, 'genres']}")
-                st.write(film_recommendation.loc[2, 'overview'])
+                st.write(film_recommendation.loc[2, 'overview'].apply(
+                    lambda x: ' '.join(x.split()[:15])))
 
             with st.container(border=True):
-                st.write(film_recommendation.loc[4, 'title'])
+                st.write(
+                    f"<h4 style='text-align: center;'>{film_recommendation.loc[4, 'title']}</h4>", unsafe_allow_html=True)
                 st.write(f"Genre: {film_recommendation.loc[4, 'genres']}")
-                st.write(film_recommendation.loc[4, 'overview'])
+                st.write(film_recommendation.loc[4, 'overview'].apply(
+                    lambda x: ' '.join(x.split()[:15])))
 
             with st.container(border=True):
-                st.write(film_recommendation.loc[6, 'title'])
-                st.write(f"Genre: {film_recommendation.loc[4, 'genres']}")
-                st.write(film_recommendation.loc[6, 'overview'])
+                st.write(
+                    f"<h4 style='text-align: center;'>{film_recommendation.loc[6, 'title']}</h4>", unsafe_allow_html=True)
+                st.write(f"Genre: {film_recommendation.loc[6, 'genres']}")
+                st.write(film_recommendation.loc[6, 'overview'].apply(
+                    lambda x: ' '.join(x.split()[:15])))
 
             with st.container(border=True):
-                st.write(film_recommendation.loc[8, 'title'])
+                st.write(
+                    f"<h4 style='text-align: center;'>{film_recommendation.loc[8, 'title']}</h4>", unsafe_allow_html=True)
                 st.write(f"Genre: {film_recommendation.loc[8, 'genres']}")
-                st.write(film_recommendation.loc[8, 'overview'])
+                st.write(film_recommendation.loc[8, 'overview'].apply(
+                    lambda x: ' '.join(x.split()[:15])))
 
         with col2:
             with st.container(border=True):
-                st.write(film_recommendation.loc[1, 'title'])
+                st.write(
+                    f"<h4 style='text-align: center;'>{film_recommendation.loc[1, 'title']}</h4>", unsafe_allow_html=True)
                 st.write(f"Genre: {film_recommendation.loc[1, 'genres']}")
-                st.write(film_recommendation.loc[1, 'overview'])
+                st.write(film_recommendation.loc[1, 'overview'].apply(
+                    lambda x: ' '.join(x.split()[:15])))
 
             with st.container(border=True):
-                st.write(film_recommendation.loc[3, 'title'])
+                st.write(
+                    f"<h4 style='text-align: center;'>{film_recommendation.loc[3, 'title']}</h4>", unsafe_allow_html=True)
                 st.write(f"Genre: {film_recommendation.loc[3, 'genres']}")
-                st.write(film_recommendation.loc[3, 'overview'])
+                st.write(film_recommendation.loc[3, 'overview'].apply(
+                    lambda x: ' '.join(x.split()[:15])))
 
             with st.container(border=True):
-                st.write(film_recommendation.loc[5, 'title'])
+                st.write(
+                    f"<h4 style='text-align: center;'>{film_recommendation.loc[5, 'title']}</h4>", unsafe_allow_html=True)
                 st.write(f"Genre: {film_recommendation.loc[5, 'genres']}")
-                st.write(film_recommendation.loc[5, 'overview'])
+                st.write(film_recommendation.loc[5, 'overview'].apply(
+                    lambda x: ' '.join(x.split()[:15])))
 
             with st.container(border=True):
-                st.write(film_recommendation.loc[7, 'title'])
+                st.write(
+                    f"<h4 style='text-align: center;'>{film_recommendation.loc[7, 'title']}</h4>", unsafe_allow_html=True)
                 st.write(f"Genre: {film_recommendation.loc[7, 'genres']}")
-                st.write(film_recommendation.loc[7, 'overview'])
+                st.write(film_recommendation.loc[7, 'overview'].apply(
+                    lambda x: ' '.join(x.split()[:15])))
 
             with st.container(border=True):
-                st.write(film_recommendation.loc[9, 'title'])
+                st.write(
+                    f"<h4 style='text-align: center;'>{film_recommendation.loc[9, 'title']}</h4>", unsafe_allow_html=True)
                 st.write(f"Genre: {film_recommendation.loc[9, 'genres']}")
-                st.write(film_recommendation.loc[9, 'overview'])
+                st.write(film_recommendation.loc[9, 'overview'].apply(
+                    lambda x: ' '.join(x.split()[:15])))
         st.snow()
     
 
