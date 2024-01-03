@@ -41,7 +41,7 @@ def main():
 
         with col1:
             with st.container(border=True):
-                st.write(film_recommendation)
+                st.write("film")
             
             with st.container(border=True):
                 st.write("film 2")
