@@ -124,16 +124,31 @@ def main():
                 st.write(film_recommendation.loc[0, 'genres'])
                 st.write(film_recommendation.loc[0, 'overview'])
 
-            
             with st.container(border=True):
-                st.write("film 2")
+                st.write(film_recommendation.loc[2, 'title'])
+                st.write(film_recommendation.loc[2, 'genres'])
+                st.write(film_recommendation.loc[2, 'overview'])
+
+            with st.container(border=True):
+                st.write(film_recommendation.loc[4, 'title'])
+                st.write(film_recommendation.loc[4, 'genres'])
+                st.write(film_recommendation.loc[4, 'overview'])
+
+            with st.container(border=True):
+                st.write(film_recommendation.loc[6, 'title'])
+                st.write(film_recommendation.loc[6, 'genres'])
+                st.write(film_recommendation.loc[6, 'overview'])
+
+            with st.container(border=True):
+                st.write(film_recommendation.loc[8, 'title'])
+                st.write(film_recommendation.loc[8, 'genres'])
+                st.write(film_recommendation.loc[8, 'overview'])
 
         with col2:
             with st.container(border=True):
-                st.write("Film 1")
-
-            with st.container(border=True):
-                st.write("Film 2")
+                st.write(film_recommendation.loc[1, 'title'])
+                st.write(film_recommendation.loc[1, 'genres'])
+                st.write(film_recommendation.loc[1, 'overview'])
 
         st.snow()
     
