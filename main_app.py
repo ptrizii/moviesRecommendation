@@ -30,7 +30,7 @@ def main():
     selected_index = st.selectbox("Type and select your favorite movie", range(len(movie_list)), format_func=lambda i: movie_list[i])
 
     if st.button("Show Recommendation"):
-        st.write(np_array[0])
+        st.write(np_array[1])
         st.write(selected_index)
         # st.write(np_array[selected_index])
 
