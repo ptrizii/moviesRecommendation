@@ -19,8 +19,7 @@ def load_data():
         # metadata = metadata.loc[:9000].reset_index(drop=True)
 
 
-def get_recommendations(query_title, data, embedding, k=10):
-    query_index = data[data['title_query'] == query_title.lower()].index.item()
+def get_recommendations(query_index, data, embedding, k=10):
     # query_index = query_title
     data_sorted = data.copy()
     # calculated weighted sim
@@ -29,7 +28,7 @@ def get_recommendations(query_title, data, embedding, k=10):
     data_sorted['similarity'] = similarity_scores
     # # sorted the list
     data_sorted = data_sorted.sort_values(by='similarity', ascending=False)
-    data_sorted = data_sorted[1:11]
+    data_sorted = data_sorted[1:k+1]
     
     return data_sorted
 
