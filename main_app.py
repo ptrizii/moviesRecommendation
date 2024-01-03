@@ -4,7 +4,6 @@ import numpy as np
 from st_files_connection import FilesConnection
 from google.cloud import storage
 import os
-from recommendation import get_recommendations
 import io
 
 # Set the environment variable for Google Cloud credentials
@@ -94,7 +93,7 @@ def main():
 
         jac_scores = jaccard_similarity(selected_index, data_copy['genres'])
         cos_scores = cosine_similarity(np_array[selected_index], np_array)
-        jac_scores = 0.3 * jac_scores
+        # jac_scores = 0.3 * jac_scores
         # cos_scores = 0.7 * cos_scores
         st.write(jac_scores[selected_index])
         # st.write(cos_scores[selected_index])
