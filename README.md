@@ -4,12 +4,12 @@ Crafted using a content-based approach, our movie recommendation system aligns w
 
 Experience the next level of movie discovery with our content-based recommendation system. Say goodbye to dissappointment and hello to personalized movie-watching experience 🎬🌟.
 
-### Example
-
-
 ### Build With
 * [![python](https://img.shields.io/badge/Python-3.9-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
 * [![Streamlit](https://img.shields.io/badge/Streamlit-1.2.0-FF4B4B.svg?style=flat&logo=Streamlit&logoColor=white)](https://streamlit.io)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+### Data
+We use [The Movies Dataset](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset?datasetId=3405&sortBy=voteCount) as a base data.
